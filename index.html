@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 5000px;
+            width: 2000px;
+        }
+        button{
+            border: none;
+            border-radius: 4px;
+            background-color: aquamarine;
+            cursor: pointer;
+            padding: 20px;
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <button>Up</button>
+    <script>
+        let btn = document.getElementsByTagName("button")[0];
+        window.onscroll= function(){
+
+            if(window.scrollY >= 600){
+             btn.style.display='block';
+            }
+            else{
+                btn.style.display='none';
+            }
+        }
+
+
+        btn.onclick = function(){
+            window.scrollTo(
+                {
+                    top:0,
+                    left:0,
+                    behavior:"smooth"
+                }
+            )
+        }
+        
+    </script>
+</body>
+</html>
